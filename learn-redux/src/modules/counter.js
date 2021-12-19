@@ -17,11 +17,13 @@ const initialState = {
 
 //리듀서 선언하기
 //리듀서는 export default로 내보내기
+// 리듀서는 파라미터를 두 개 받는다. 첫번째 파라미터는 현재 상태이고, 두번째 파라미터는 액션 객체
 export default function counter(state = initialState, action) {
   switch (action.type) {
     case SET_DIFF:
       return {
         ...state,
+        // export const setDiff = (diff) => ({ type: SET_DIFF, diff }); -> action.diff 사용가능
         diff: action.diff,
       };
     case INCREASE:
